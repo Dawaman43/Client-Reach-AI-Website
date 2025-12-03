@@ -2,9 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
-import { StaggerContainer, StaggerItem } from "@/components/ui/stagger-container";
+import { ArrowRight } from "lucide-react";
+// import { openCalendlyPopup } from "@/utils/calendly";
+import Link from "next/link";
 
 export const Transformation = () => {
   return (
@@ -13,11 +14,11 @@ export const Transformation = () => {
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-6">
-              How Client Reach AI Agents{" "}
+              How Client Reach AI Agents{" "} <br />
               <span className="text-brand-500">Transform Your Clinic</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              <span className="italic font-medium">Increase revenue, expand capacity, and cut operational costs</span> — with intelligent AI agents built to scale your clinic without increasing payroll.
+              <span className="italic font-medium">Increase revenue, expand capacity, and cut operational costs</span> - with intelligent AI agents built to scale your clinic without increasing payroll.
             </p>
           </div>
         </FadeIn>
@@ -40,11 +41,16 @@ export const Transformation = () => {
         {/* CTA Button */}
         <FadeIn>
           <div className="text-center">
-            <Link
-              href="/discover"
-              className="inline-block px-12 py-5 bg-brand-500 text-white text-xl font-bold rounded-full hover:bg-brand-600 transition-all duration-300 shadow-lg shadow-brand-500/30 hover:shadow-xl hover:shadow-brand-500/40 hover:scale-105 uppercase tracking-wide"
+            {/* <button
+              onClick={openCalendlyPopup}
+              className="inline-flex items-center gap-2 px-4 py-2 md:px-8 md:py-4 bg-brand-500 text-white text-sm md:text-base font-semibold rounded-full hover:bg-brand-600 transition-all duration-300 shadow-lg shadow-brand-500/30 hover:shadow-xl hover:shadow-brand-500/40 hover:scale-105 uppercase tracking-wide"
             >
               HOW TO START
+              <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+            </button> */}
+            <Link href="/discover" className="inline-flex items-center gap-2 px-4 py-2 md:px-8 md:py-4 bg-brand-500 text-white text-sm md:text-base font-semibold rounded-full hover:bg-brand-600 transition-all duration-300 shadow-lg shadow-brand-500/30 hover:shadow-xl hover:shadow-brand-500/40 hover:scale-105 uppercase tracking-wide">
+              HOW TO START
+              <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
             </Link>
           </div>
         </FadeIn>

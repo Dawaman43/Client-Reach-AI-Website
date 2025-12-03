@@ -334,12 +334,53 @@
         }
       }
 
-      @media (max-width: 480px) {
+      @media (max-width: 768px) {
+        #clientreach-chat-widget {
+          bottom: 10px;
+          right: 10px;
+        }
+
+        .cr-chat-button {
+          width: 56px;
+          height: 56px;
+        }
+
+        .cr-chat-button svg {
+          width: 24px;
+          height: 24px;
+        }
+
         .cr-chat-window {
-          width: calc(100vw - 40px);
-          height: calc(100vh - 100px);
-          bottom: 80px;
-          right: 20px;
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          top: 0;
+          border-radius: 0;
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        .cr-welcome-bubble {
+          bottom: 66px;
+          right: 0;
+          max-width: calc(100vw - 80px);
+          white-space: normal;
+        }
+
+        .cr-messages {
+          padding: 12px;
+        }
+
+        .cr-input-container {
+          padding: 12px;
+        }
+
+        .cr-message-bubble {
+          max-width: 85%;
+          font-size: 14px;
         }
       }
 

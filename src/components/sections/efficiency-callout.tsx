@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
-import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { openCalendlyPopup } from "@/utils/calendly";
 
 export const EfficiencyCallout = () => (
   <section className="py-24 bg-white dark:bg-dark-bg">
@@ -16,12 +19,12 @@ export const EfficiencyCallout = () => (
         assistants. They work together as one team to help you get more
         bookings, save lost revenue, and keep your clinic running smoothly.
       </p>
-      <Link
-        href="/discover"
-        className="inline-flex items-center justify-center px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-full hover:opacity-90 transition-all"
+      <button
+        onClick={openCalendlyPopup}
+        className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-500 dark:bg-white text-white dark:text-gray-900 font-medium rounded-full hover:opacity-90 transition-all"
       >
-        Book My Free Audit Now
-      </Link>
+        Book My Free Audit Now <ArrowRight size={18} />
+      </button>
     </div>
   </section>
 );

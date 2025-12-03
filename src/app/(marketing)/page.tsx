@@ -7,6 +7,7 @@ import { Guarantee } from "@/components/sections/guarantee";
 import { Transformation } from "@/components/sections/transformation";
 import { Testimonials } from "@/components/sections/testimonials";
 import { EfficiencyCallout } from "@/components/sections/efficiency-callout";
+import { WeeklyInsiderForm } from "@/components/sections/weekly-insider-form";
 
 export default function HomePage() {
   return (
@@ -31,6 +32,9 @@ export default function HomePage() {
       </FadeIn>
       <FadeIn>
         <EfficiencyCallout />
+      </FadeIn>
+      <FadeIn>
+        <WeeklyInsiderForm />
       </FadeIn>
     </>
   );
