@@ -44,20 +44,28 @@ export default function AiAgentsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-dark-bg">
-      <div className="bg-white dark:bg-dark-card border-b border-gray-100 dark:border-dark-border pt-24 pb-16">
+      {/* Hero Section - Full Height */}
+      <section className="min-h-screen md:min-h-[60vh] bg-gradient-to-b from-brand-50 via-white to-white dark:from-brand-950 dark:via-dark-bg dark:to-dark-bg border-b border-gray-100 dark:border-dark-border flex justify-center items-center py-12 md:py-0 px-4">
         <FadeIn>
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Unlock Hidden Revenue in Your Clinics
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Every missed call is a missed opportunity. Client Reach AI's
-              Receptionist & Call Analysis Agents help aesthetic, dental, and
-              healthcare clinics recover lost leads.
-            </p>
+          <div className="w-full md:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="text-left order-2 md:order-1">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">
+                Unlock <br /> <span className="text-brand-500">Hidden Revenue</span> <br /> in Your Clinics
+              </h1>
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-6 md:mb-8 leading-relaxed">
+                Every missed call is a missed opportunity. Client Reach AI's Receptionist & Call Analysis Agents help aesthetic, dental, and healthcare clinics recover lost leads.
+              </p>
+            </div>
+            <div className="h-[300px] md:h-[500px] w-full rounded-2xl overflow-hidden order-1 md:order-2">
+              <img 
+                src="/revenue.webp" 
+                alt="Unlock Hidden Revenue" 
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
           </div>
         </FadeIn>
-      </div>
+      </section>
 
       <div className="max-w-7xl mx-auto px-4 py-16">
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">

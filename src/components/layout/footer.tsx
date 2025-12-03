@@ -7,17 +7,17 @@ export const Footer: React.FC = () => {
       <div className="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0 max-w-sm">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-6 h-6 bg-brand-500 rounded flex items-center justify-center">
-                <span className="text-white font-bold text-xs">C</span>
-              </div>
-              <span className="self-center text-lg font-semibold whitespace-nowrap dark:text-white">
-                ClientReach.ai
+            <div className="flex items-center gap-3">
+            <img src="/clientreachai.logo.png" alt="ClientReach.ai Logo" className="h-10 w-auto object-contain" />
+            <div className="flex flex-col leading-none ml-[-10px]">
+              <span className="text-xl font-bold text-gray-900 dark:text-white">Client</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white  mt-[-10px]">
+                Reach<span className="text-brand-500">.ai</span>
               </span>
-            </Link>
-            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-              Client Reach AI provides a digital workforce of AI agents that
-              work together to increase revenue without adding headcount.
+            </div>
+          </div>
+            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed py-2">
+              Client Reach AI provides a digital workforce of AI agents that work together to increase revenue without adding headcount.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -105,7 +105,7 @@ export const Footer: React.FC = () => {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-800 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2024{" "}
+            © 2025{" "}
             <a href="https://clientreach.ai/" className="hover:underline">
               ClientReach.ai™
             </a>

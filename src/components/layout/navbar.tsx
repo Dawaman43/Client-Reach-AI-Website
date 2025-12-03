@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Phone } from "lucide-react";
 import { useTheme } from "@/contexts/theme-context";
+import { openCalendlyPopup } from "@/utils/calendly";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,7 @@ export const Navbar: React.FC = () => {
   const pathname = usePathname();
 
   const navLinks = [
+    { name: "Home", path: "/#" },
     { name: "About", path: "/about" },
     { name: "AI Agents", path: "/ai-agents" },
     { name: "Discover", path: "/discover" },
@@ -27,12 +29,15 @@ export const Navbar: React.FC = () => {
           href="/"
           className="flex items-center space-x-2 rtl:space-x-reverse"
         >
-          <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">C</span>
+          <div className="flex items-center gap-3">
+            <img src="/clientreachai.logo.png" alt="ClientReach.ai Logo" className="h-10 w-auto object-contain" />
+            <div className="flex flex-col leading-none ml-[-10px]">
+              <span className="text-xl font-bold text-gray-900 dark:text-white">Client</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white  mt-[-10px]">
+                Reach<span className="text-brand-500">.ai</span>
+              </span>
+            </div>
           </div>
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white tracking-tight">
-            ClientReach.ai
-          </span>
         </Link>
 
         <div className="flex md:order-2 space-x-3 md:space-x-4 rtl:space-x-reverse items-center">
@@ -44,12 +49,13 @@ export const Navbar: React.FC = () => {
             {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
-          <Link
-            href="/discover"
-            className="hidden md:flex text-white bg-brand-500 hover:bg-brand-600 focus:ring-4 focus:outline-none focus:ring-brand-100 font-medium rounded-full text-sm px-5 py-2.5 text-center transition-all shadow-lg shadow-brand-500/20"
+          <button
+            onClick={openCalendlyPopup}
+            className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-brand-500 text-white font-medium rounded-full hover:bg-brand-600 transition-all shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30 hover:scale-105"
           >
+            <Phone size={18} />
             Book a Call
-          </Link>
+          </button>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -82,13 +88,16 @@ export const Navbar: React.FC = () => {
               </li>
             ))}
             <li className="md:hidden mt-4">
-              <Link
-                href="/discover"
-                onClick={() => setIsOpen(false)}
-                className="block w-full text-white bg-brand-500 hover:bg-brand-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  openCalendlyPopup();
+                }}
+                className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-brand-500 text-white font-medium rounded-xl hover:bg-brand-600 transition-colors"
               >
+                <Phone size={18} />
                 Book a Call
-              </Link>
+              </button>
             </li>
           </ul>
         </div>

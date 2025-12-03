@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import Image from "next/image";
+import { openCalendlyPopup } from "@/utils/calendly";
 
 const steps = [
   {
@@ -25,7 +26,7 @@ const steps = [
     title: "The Client Reach Guarantee",
     description:
       "If you're not completely satisfied with the results within 4 weeks of using our AI systems, we'll give you a full refund — no questions asked.",
-    image: "/images/guarantee-placeholder.jpg",
+    image: "/guarentee.jpg",
   },
 ];
 
@@ -103,7 +104,7 @@ export const Guarantee = () => {
     <section
       ref={sectionRef}
       className="relative bg-white dark:bg-dark-bg py-24"
-      style={{ minHeight: `${steps.length * 80}vh` }}
+      style={{ minHeight: window.innerWidth < 768 ? `${steps.length * 120}vh` : `${steps.length * 80}vh` }}
     >
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
@@ -153,13 +154,13 @@ export const Guarantee = () => {
                   {/* CTA Button on last step */}
                   {index === steps.length - 1 && (
                     <div className="pt-6">
-                      <Link
-                        href="/discover"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-brand-500 text-white font-semibold rounded-full hover:bg-brand-600 transition-all duration-300 shadow-lg shadow-brand-500/30 hover:shadow-xl hover:shadow-brand-500/40 hover:scale-105"
+                      <button
+                        onClick={openCalendlyPopup}
+                        className="inline-flex items-center gap-2 px-4 py-2 md:px-8 md:py-4 bg-brand-500 text-white text-sm md:text-base font-semibold rounded-full hover:bg-brand-600 transition-all duration-300 shadow-lg shadow-brand-500/30 hover:shadow-xl hover:shadow-brand-500/40 hover:scale-105"
                       >
-                        <ShieldCheck className="w-5 h-5" />
+                        <ShieldCheck className="w-4 h-4 md:w-5 md:h-5" />
                         Start Your Risk-Free Trial
-                      </Link>
+                      </button>
                     </div>
                   )}
                 </div>
@@ -167,7 +168,7 @@ export const Guarantee = () => {
                 {/* Right Side - Image Placeholder */}
                 <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden dark:from-brand-900/20 dark:to-brand-950/20 border-2 border-brand-200 dark:border-brand-800 shadow-xl">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center space-y-4">
+                    <div className="text-center space-y-6">
                       {/*<div className="w-24 h-24 mx-auto rounded-full bg-brand-500/10 dark:bg-brand-500/20 flex items-center justify-center">
                         <ShieldCheck className="w-12 h-12 text-brand-500" />
                       </div>
@@ -177,7 +178,7 @@ export const Guarantee = () => {
                       <p className="text-gray-500 dark:text-gray-400 text-sm px-8">
                         {step.number} - {step.title}
                       </p> */}
-                      <img src={step.image} alt="" className="z-50 w-full h-full object-cover" />
+                      <img src={step.image} alt="" className=" w-[600px] h-[500px] object-cover" />
                     </div>
                   </div>
                   {/* Decorative gradient overlay */}

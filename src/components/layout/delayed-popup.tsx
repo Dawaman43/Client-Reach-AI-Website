@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { X, ArrowRight } from "lucide-react";
+import { openCalendlyPopup } from "@/utils/calendly";
 
 export const DelayedPopup: React.FC = () => {
   const [show, setShow] = useState(false);
@@ -40,13 +41,15 @@ export const DelayedPopup: React.FC = () => {
             discover exactly where you can scale.
           </p>
           <div className="space-y-3">
-            <Link
-              href="/discover"
-              onClick={() => setShow(false)}
+            <button
+              onClick={() => {
+                setShow(false);
+                openCalendlyPopup();
+              }}
               className="block w-full bg-brand-500 hover:bg-brand-600 text-white font-medium py-3 px-4 rounded-lg transition-colors"
             >
               Book My Free Audit
-            </Link>
+            </button>
             <button
               onClick={() => setShow(false)}
               className="block w-full text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-sm font-medium"

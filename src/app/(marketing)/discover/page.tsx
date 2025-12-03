@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StaggerContainer, StaggerItem } from "@/components/ui/stagger-container";
+import { openCalendlyPopup } from "@/utils/calendly";
 
 const AccordionItem: React.FC<{ question: string; answer: string }> = ({
   question,
@@ -49,7 +50,7 @@ const ROICard: React.FC<{ sector: string; stats: string[] }> = ({
   sector,
   stats,
 }) => (
-  <div className="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-dark-border hover:border-brand-200 dark:hover:border-brand-800 transition-all">
+  <div className="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-dark-border hover:border-brand-200 dark:hover:border-brand-800 transition-all h-full flex flex-col cursor-pointer hover:shadow-lg hover:shadow-brand-500/20">
     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-100 dark:border-gray-700 pb-4">
       {sector}
     </h3>
@@ -70,25 +71,28 @@ export default function DiscoverPage() {
   return (
     <div className="bg-white dark:bg-dark-bg">
       {/* Hero */}
-      <section className="bg-slate-900 text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-900 to-slate-900 opacity-90"></div>
+      <section className="bg-gradient-to-b from-brand-50 via-white to-white dark:from-brand-950 dark:via-dark-bg dark:to-dark-bg py-24 relative overflow-hidden border-b border-gray-100 dark:border-dark-border">
+
         <FadeIn>
           <div className="relative max-w-7xl mx-auto px-4 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 border border-brand-500/30 mb-8">
-              <span className="text-xs font-bold text-brand-300 uppercase tracking-wide">
+              <span className="text-xs font-bold text-brand-500 uppercase tracking-wide">
                 Free Audit
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
               Unlock Hidden Revenue in Your Clinics <br /> Without Spending More
               on Marketing
             </h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
               Booking a consultation with Client Reach AI helps you clearly see
               where your clinic is losing time, money, and potential patients —
               and how AI can fix it fast.
             </p>
-            <button className="bg-brand-500 hover:bg-brand-600 text-white font-bold py-4 px-8 rounded-full transition-all shadow-[0_0_20px_rgba(20,163,246,0.3)] flex items-center gap-2 mx-auto">
+            <button 
+              onClick={openCalendlyPopup}
+              className="bg-brand-500 hover:bg-brand-600 text-white font-bold py-4 px-8 rounded-full transition-all shadow-lg shadow-brand-500/30 hover:shadow-xl hover:shadow-brand-500/40 flex items-center gap-2 mx-auto"
+            >
               Book My Free Audit Now <ArrowRight size={20} />
             </button>
           </div>
@@ -187,7 +191,10 @@ export default function DiscoverPage() {
               ))}
             </div>
             <div className="text-center mt-12">
-              <button className="bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md">
+              <button 
+                onClick={openCalendlyPopup}
+                className="bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md"
+              >
                 Get Your Free Audit
               </button>
             </div>
