@@ -162,10 +162,12 @@ export function ChatWidget() {
         </div>
       )}
 
-      {/* Chat Button */}
+      {/* Chat Button - Hidden on mobile when widget is open, visible on desktop always */}
       <button
         onClick={toggleChat}
-        className="fixed bottom-5 right-5 z-[999999] w-14 h-14 md:w-16 md:h-16 bg-brand-500 hover:bg-brand-600 text-white rounded-full shadow-lg shadow-brand-500/30 hover:shadow-xl hover:shadow-brand-500/40 flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95"
+        className={`fixed bottom-5 right-5 z-[999999] w-14 h-14 md:w-16 md:h-16 bg-brand-500 hover:bg-brand-600 text-white rounded-full shadow-lg shadow-brand-500/30 hover:shadow-xl hover:shadow-brand-500/40 flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 ${
+          isOpen ? "hidden md:flex" : "flex"
+        }`}
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
         {isOpen ? (
