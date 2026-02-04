@@ -10,15 +10,26 @@ const steps = [
     {
         number: "Step 1",
         title: "Consultation",
-        description:
-            "Book a 1-on-1 consultation with one of the Client Reach AI team to pinpoint exactly where AI can create the biggest impact in your clinic - from capturing more bookings to streamlining patient communication and reducing admin load.",
+
+        description: `
+Book a 1-on-1 consultation with a Client Reach AI specialist to pinpoint exactly where AI can
+create the biggest impact in your business — from capturing more leads and enquiries to
+streamlining customer communication and reducing admin workload.
+`,
+
         image: "/consultation.jpeg",
     },
     {
         number: "Step 2",
         title: "Integration",
-        description:
-            "After we have your consultation and confirm the right AI setup for your clinic, we get everything built and installed for you. If you already use a CRM, we plug the system straight into it. If you don't have one yet, don't worry, our team will set everything up for you and connect your clinic to the CRM you prefer.",
+
+        description: `
+After your consultation, we confirm the right AI setup for your business and handle the full build
+and integration for you. If you already use a CRM, we plug the system straight into your existing
+setup. If you don’t have one yet, our team will set everything up and connect your business to the
+CRM that best fits your needs.
+`,
+
         image: "/integrations.png",
     },
     {
